@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+
+		<title>
+			المهمة 3
+		</title>
+	
+	<!-- Framework CSS -->
+		<link rel="stylesheet" href="inc/css/blueprint/screen.css" type="text/css" media="screen, projection">
+		<link rel="stylesheet" href="inc/css/blueprint/print.css" type="text/css" media="print">
+		<!--[if lt IE 8]>
+		<link rel="stylesheet" href="inc/css/blueprint/ie.css" type="text/css" media="screen, projection">
+		<![endif]-->		
+    <!--END Framework CSS -->
+
+    <!-- JQuery -->
+		<script type="text/javascript" src="inc/js/jquery.js"></script>
+		<script type="text/javascript">                                         
+			$(document).ready(function() 
+				{
+					msgNum=1;  // عداد للرسائل المرسلة بواسطة مربع النص
+					$("#msgSubmit").click(function() 
+						{
+						    
+							msg = $("#Rmsg").val();
+							if (msg == "") 
+								{
+									alert("لا تترك الحقل فارغا");
+		                        }
+			
+							$("#Wmsg").append( "<div id=r" + msgNum + ">" + $("#Rmsg").val() + "</div>"); // اضافة الرسالة في سطر جديد
+							mid="#r" + msgNum;
+							$(mid).addClass("highlight large");     // تنسيق سطر الرسالة
+							msgNum= msgNum +1;
+						});
+				
+						$("#f1").submit(function() 
+						{
+							return false;
+						});
+
+				});                             
+        </script> 
+    <!--END JQuery -->	
+	</head>
+	<body>
+		<div class="container" >
+		    <!--Text Box-->	
+			<div class="span-24 last center">
+				<form id="f1" >
+					<input type="text" name="Rmsg" id="Rmsg" class="title">
+					<input type="submit" value="ارسل" id="msgSubmit">
+				</form>
+			</div>	
+			<!--END Text Box -->	
+			
+			<!--what we write in text box, will appaer in this AREA-->	
+			<div id="Wmsg" class="span-24 last center">
+			</div>
+			<!--END AREA -->	
+		</div>	
+	</body>
+</html>	
