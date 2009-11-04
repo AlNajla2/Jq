@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+
+		<title>
+			المهمة 1
+		</title>
+	
+	<!-- Framework CSS -->
+		<link rel="stylesheet" href="inc/css/blueprint/screen.css" type="text/css" media="screen, projection">
+		<link rel="stylesheet" href="inc/css/blueprint/print.css" type="text/css" media="print">
+		<!--[if lt IE 8]>
+		<link rel="stylesheet" href="inc/css/blueprint/ie.css" type="text/css" media="screen, projection">
+		<![endif]-->		
+    <!--END Framework CSS -->
+
+    <!-- JQuery -->
+		<script type="text/javascript" src="inc/js/jquery.js"></script>
+		<script type="text/javascript">                                         
+			$(document).ready(function() 
+				{
+					$("#f1").submit(function() 
+						{	
+							alert($("#msg").val());   
+							return false;
+						});
+				});                         
+        </script> 
+	</head>
+	<body>
+		<div class="container" >
+		    <!--Text Box-->	
+			<div class="span-24 last center">
+				<form id="f1" >
+					<input type="text" name="msg" id="msg" class="title">
+					<input type="submit" value="ارسل" >
+				</form>
+			</div>
+		</div>	
+	</body>
+</html>	
